@@ -75,7 +75,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-   var Attars = ['Ameer Ul Oud','Ehsas Ul Arabia','Bakarat Rouje','Savage','Aventus Creed','Silver','Full','Fawakah Makkah'];
     return Scaffold(
       appBar: AppBar(
         // TRY THIS: Try changing the color here to a specific color (to
@@ -86,19 +85,73 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-    body: ListView.separated(itemBuilder: (context, index){
-     return ListTile(
-     leading: Text('${index + 1}'),
-     title:  Text(Attars[index]),
-      subtitle: Text("Orignal premium Attar"),
-       trailing: Icon(Icons.add),
-     );
-    },
-     itemCount: Attars.length,
-      separatorBuilder: (context, index){
-      return Divider(height: 15, thickness: 2,);
-      },
-    ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('Huzazifa'),
+                accountEmail: Text('Huzaifa12@gmail.com'),
+              currentAccountPicture: CircleAvatar(foregroundImage: AssetImage("Assets/file_00000000c2387206aba449f7b71b0cc3.png"),),
+             otherAccountsPictures: [
+               CircleAvatar(foregroundImage: AssetImage("Assets/file_00000000c2387206aba449f7b71b0cc3.png"),),
+               CircleAvatar(foregroundImage: AssetImage("Assets/file_00000000c2387206aba449f7b71b0cc3.png"),),
+             ],
+
+            ),
+
+            ListTile(
+              leading: Icon(Icons.home,color: Colors.lightBlue,),
+              title: Text('Home'),
+              onTap: (){
+
+              },
+            ),
+
+            ListTile(
+              leading: Icon(Icons.shopping_cart,color: Colors.lightBlue,),
+              title: Text('Shope'),
+              onTap: (){
+
+              },
+            ),
+
+            ListTile(
+              leading: Icon(Icons.favorite,color: Colors.lightBlue,),
+              title: Text('Faverote'),
+              onTap: (){
+
+              },
+            ),
+            Padding(
+                padding: const EdgeInsetsGeometry.all(12.0),
+        child: Text('Services'),
+            ),
+
+            ListTile(
+              leading: Icon(Icons.facebook,color: Colors.lightBlue,),
+              title: Text('Facebook Marketing'),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.email,color: Colors.lightBlue,),
+              title: Text('Email Marketing'),
+              onTap: (){
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.search,color: Colors.lightBlue,),
+              title: Text('Search Engine Optimization'),
+              onTap: (){
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Container(
+
+
+      ),
 
     );
   }
